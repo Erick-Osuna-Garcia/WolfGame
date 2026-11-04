@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RoomRecord {
+  id        String   @id
+  code      String   @unique
+  status    String
+  state     Json
+  createdAt DateTime @default(now())
+}
+
+model SessionRecord {
+  tokenHash      String @id
+  recoveryHash   String @unique
+  roomCode       String
+  participantId  String
+  kind           String
+}
+
+model ConfigRecord {
+  id        String   @id
+  name      String
+  snapshot  Json
+  createdAt DateTime @default(now())
+}

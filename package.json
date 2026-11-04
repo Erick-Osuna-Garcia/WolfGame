@@ -1,0 +1,13 @@
+{
+  "name": "werewolf-online",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @werewolf/api --filter @werewolf/web dev",
+    "dev:api": "pnpm --filter @werewolf/api dev",
+    "dev:web": "pnpm --filter @werewolf/web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:rules": "pnpm --filter @werewolf/game-rules test"
+  }
+}

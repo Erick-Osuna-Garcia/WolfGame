@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: werewolf
+      POSTGRES_PASSWORD: werewolf
+      POSTGRES_DB: werewolf
+    ports:
+      - "5432:5432"
+    volumes:
+      - werewolf_pg:/var/lib/postgresql/data
+
+volumes:
+  werewolf_pg:
